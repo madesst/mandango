@@ -5,7 +5,7 @@ $loader->add('Mandango\Tests', __DIR__);
 $loader->add('Model', __DIR__);
 
 // mondator
-$configClasses = require __DIR__.'/config_classes.php';
+$configClasses = require __DIR__ . '/config_classes.php';
 
 use Mandango\Mondator\Mondator;
 

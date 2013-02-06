@@ -41,7 +41,12 @@
             if (!$id = $this->get{{ referenceOne.field|ucfirst }}()) {
                 return null;
             }
-            if (!$document = $this->getMandango()->getRepository('{{ referenceOne.class }}')->findOneById($id)) {
+            if (!$document = $this->getMandango()->getRepository('{{ referenceOne.class }}')->
+												createQuery()->
+													criteria(array('_id' => $id))->
+													fields(array())->
+													limit(1)->
+												one()) {
                 throw new \RuntimeException('The reference "{{ name }}" does not exist.');
             }
             $this->data['referencesOne']['{{ name }}'] = $document;
