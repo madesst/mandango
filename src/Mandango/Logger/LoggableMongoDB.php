@@ -68,7 +68,7 @@ class LoggableMongoDB extends \MongoDB
 
         $this->log(array(
             'type' => 'command',
-            'data' => $data,
+            'data' => $return,
             'time' => $time,
         ));
 
