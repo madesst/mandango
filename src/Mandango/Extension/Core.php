@@ -509,7 +509,7 @@ class Core extends Extension
             !$this->configClass['isEmbedded'] ? array_keys($this->configClass['relationsManyMany']) : array(),
             !$this->configClass['isEmbedded'] ? array_keys($this->configClass['relationsManyThrough']) : array()
         ) as $name) {
-            if (in_array($name, array('mandango', 'repository', 'collection', 'id', 'query_for_save', 'fields_modified', 'document_data'))) {
+            if (in_array($name, array('mandango', 'repository', 'collection', 'query_for_save', 'fields_modified', 'document_data'))) {
                 throw new \RuntimeException(sprintf('The document cannot be a data with the name "%s".', $name));
             }
         }
