@@ -23,6 +23,26 @@ use Mandango\Document\Document;
  */
 class EmbeddedGroup extends Group
 {
+	public function offsetGet($offset)
+	{
+		return $this->getIterator()->offsetGet($offset);
+	}
+
+	public function offsetSet($offset, $value)
+	{
+		$this->getIterator()->offsetSet($offset, $value);
+	}
+
+	public function offsetUnset($offset)
+	{
+		$this->getIterator()->offsetUnset($offset);
+	}
+
+	public function offsetExists($offset)
+	{
+		return $this->getIterator()->offsetExists($offset);
+	}
+
     /**
      * Set the root and path of the embedded group.
      *

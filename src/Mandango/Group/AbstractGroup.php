@@ -21,7 +21,7 @@ use Mandango\Document\Document;
  *
  * @api
  */
-abstract class AbstractGroup implements \Countable, \IteratorAggregate
+abstract class AbstractGroup implements \Countable, \ArrayAccess, \IteratorAggregate
 {
     private $saved;
 
