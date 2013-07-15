@@ -63,7 +63,7 @@
             ) {
                 $field = $rap['path'].'.{{ field.dbName }}';
                 $rap['root']->addFieldCache($field);
-                $collection = $this->getMandango()->getRepository(get_class($rap['root']))->getCollection();
+                $collection = $this->getMandango()->getRepository($rap['root']->getClassName())->getCollection();
                 $data = $collection->findOne(array('_id' => $rap['root']->getId()), array($field => 1));
                 foreach (explode('.', $field) as $key) {
                     if (!isset($data[$key])) {

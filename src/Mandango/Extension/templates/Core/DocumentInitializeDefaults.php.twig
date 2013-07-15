@@ -11,3 +11,11 @@
 {% endif %}
 {% endfor %}
     }
+
+    /**
+    * Returns class name.
+    */
+    public function getClassName()
+    {
+        return get_class($this);
+    }

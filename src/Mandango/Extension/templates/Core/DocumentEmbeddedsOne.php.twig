@@ -70,7 +70,7 @@
                 &&
                 false === strpos($rap['path'], '._add')
             ) {
-                $collection = $this->getMandango()->getRepository(get_class($rap['root']))->getCollection();
+                $collection = $this->getMandango()->getRepository($rap['root']->getClassName())->getCollection();
                 $field = $rap['path'].'.{{ name }}';
                 $result = $collection->findOne(array('_id' => $rap['root']->getId(), $field => array('$exists' => 1)));
                 if ($result) {
